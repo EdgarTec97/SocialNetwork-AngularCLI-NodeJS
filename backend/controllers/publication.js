@@ -1,14 +1,14 @@
 'use strict'
 
-var path = require('path');
-var fs = require('fs'); // librería de NodeJS para trabajar con arvhivos
 var mongoosePaginate = require('mongoose-pagination');
-var moment = require('moment');
 
 var Publication = require('../models/publication');
 var Follow = require('../models/follow');
 var User = require('../models/user');
 
+var fs = require('fs');
+var path = require('path');
+var moment = require('moment');
 
 
 /*** Método de pruebas ***/
@@ -125,38 +125,37 @@ function deletePublication(req, res){
 
 /*** Método para subir archivos a la publicación ***/
 function uploadImage(req, res){
-	var publication_id = req.params.id;
-
-	if(req.files){ //comprobamos que hay archivos para subir
-		var file_path = req.files.image.path;
-		var file_split = file_path.split('\\'); // devuelve un array con los elementos separados donde había una '\'
-
-		var file_name = file_split[2];
-
-		var ext_split = file_name.split('\.');
-		var file_ext = ext_split[1];
-
-		if(file_ext == 'png' || file_ext == 'jpg' || file_ext == 'jpeg' || file_ext == 'gif'){
-
-			Publication.findOne({'user': req.user.sub, '_id':publication_id}).exec((err, publication) => {
-				if (publication){
-					Publication.findByIdAndUpdate(publication_id, {file: file_name}, {new:true}, (err, publicationUpdated) => {
-						if(err) return res.status(500).send({message: 'Error en la petición!!'});
-						if(!publicationUpdated) return res.status(404).send({message: 'NO se ha podido actualizar la publicación!!'});
-
-						return res.status(200).send({publication: publicationUpdated});
+	let userId = req.user.sub;
+	const publicationId = req.params.id;
+	if(req.files){
+		console.log(req.files);
+		var filePath = req.files.image.path;
+		var fileSplit = filePath.split('\\');
+		var fileName =fileSplit[2];
+		var exSplit = fileName.split('\.');
+		var fileExt = exSplit[1];
+		if(fileExt == 'png' || fileExt == 'jpg' || fileExt == 'jpeg' || fileExt == 'gif'){
+			Publication.find({'_id':publicationId,'user':userId},(err, PTT)=>{
+				if (err) return res.status(500).send({message: "Error al subir imagen en 1"});
+				if (!PTT) return res.status(404).send({message: "No tienes permiso para subir imagen"});
+				if (PTT.length >= 1) {
+					Publication.findByIdAndUpdate(publicationId,{file: fileName},{new:true},(err,publicationUpload) => {
+						if(err) return res.status(500).send({message: "Error al guardar la imagen"});
+						if(!publicationUpload) return res.status(404).send({message: "No hay imagen para guardar"});
+						return res.status(200).send({
+							publication: publicationUpload,
+							user: userId
+						});
 					});
 				}else{
-					return removeFilesUploads(res, file_path, 'No tienes permiso para actualizar esta publicación!!');
+					return removeFilesToUpload(res, filePath, 'No tienes permiso para actualizar una imagen en esta publicación');
 				}
 			});
-
-		} else {
-			return removeFilesUploads(res, file_path, 'Extensión no válida!!');
+		}else{
+			return removeFilesToUpload(res, filePath, 'Extensión no valida');
 		}
-
-	} else {
-		return res.status(200).send({message: 'NO se han subido archivos!!!'});
+	}else{
+		return res.status(200).send({message: "No se han subido archivos"}); 
 	}
 }
 

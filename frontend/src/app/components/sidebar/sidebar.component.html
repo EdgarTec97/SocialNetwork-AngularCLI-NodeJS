@@ -72,7 +72,7 @@
 
 			<p>
 				<label>Sube una imagen</label>
-				<input type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)"/>
+				<input type="file" name="image" #file="ngModel" [(ngModel)]="publication.file" placeholder="Subir imagen" (change)="fileChangeEvent($event)"/>
 			</p>
 
 			<div class="derecha">
