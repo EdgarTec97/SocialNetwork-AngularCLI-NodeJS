@@ -26,4 +26,4 @@ Red Social del estilo de Twitter con MEAN Stack (MongoDB, Express, Angular y Nod
 
 ## Autor
 
-* **Javi Montoto** - [javimontoto](https://www.javimontoto.com)
+* **Edgar Vega** - [EC company](https://itsystem.com.mx/dash/index)

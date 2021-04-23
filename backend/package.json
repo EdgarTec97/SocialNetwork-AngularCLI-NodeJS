@@ -1,6 +1,6 @@
 {
   "_comment": "",
-  "name": "curso-mean-social",
+  "name": "red-social",
   "version": "1.0.0",
   "description": "Backend para el proyecto de desarrollar una red social con Angular y Node",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "JaviMontoto",
+  "author": "EdgarVega",
   "license": "MIT",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
