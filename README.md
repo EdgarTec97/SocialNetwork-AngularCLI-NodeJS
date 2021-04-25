@@ -14,7 +14,6 @@ Twitter-style Social Network with MEAN Stack (MongoDB, Express, Angular and Node
 
 ## Technologies
 
-Resultados de traducción
 *** JavaScript, one of the most popular programming languages on the web.
 *** NodeJS, very popular platform for developing with JavaScript on the server side.
 *** ExpressJS, framework for Node.js that allows us to work with the HTTP protocol and have a route system.
