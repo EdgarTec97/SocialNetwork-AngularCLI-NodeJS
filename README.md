@@ -1,28 +1,30 @@
-# MiREDE
-Red Social del estilo de Twitter con MEAN Stack (MongoDB, Express, Angular y Node.js)
+# Social Network
+Twitter-style Social Network with MEAN Stack (MongoDB, Express, Angular and Node.js)
 
-## Características
+## Features
 
-* Registrarnos y loguearnos en la plataforma.
-* Modificar nuestros datos.
-* Subir una imagen de perfil.
-* Seguir y dejar de seguir a cualquier usuario (follow y unfollow).
-* Hacer publicaciones con texto e imágenes.
-* Ver las publicaciones de la gente que seguimos en el timeline.
-* Ver mi perfil de usuario y el del resto de personas.
-* Recibir y enviar mensajes privados.
+* Register and log in on the platform.
+* Modify our data.
+* Upload a profile picture.
+* Follow and unfollow any user (follow and unfollow).
+* Make posts with text and images.
+* See the publications of the people we follow on the timeline.
+* See my user profile and that of other people.
+* Receive and send private messages.
 
-## Tecnologías empleadas
+## Technologies
 
-* **JavaScript**, uno de los lenguajes de programación mas populares de la web.
-* **NodeJS**, plataforma muy popular para desarrollar con JavaScript en el lado del servidor.
-* **ExpressJS**, framework para Node.js que nos permite trabajar con el protocolo HTTP y tener un sistema de rutas.
-* **MongoDB**, el sistema gestor de bases de datos NoSQL basado en JavaScript mas potente y popular.
-* **Angular6**, el framework impulsado por Google cuyo propósito es el desarrollo de aplicaciones web SPA (Single page applications). Reactivo e instantáneo.
-* **jQuery**, el framework frontend imprescindible y más conocido para JavaScript.
-* **AJAX**, para hacer peticiones asíncronas al servidor.
-* **Bootstrap**, el framework CSS y JS más estandarizado e imprescindible actualmente para la construcción de interfaces de usuario.
-* **HTML5**, **CSS3**, etc.
+851 / 5000
+Resultados de traducción
+*** JavaScript, one of the most popular programming languages on the web.
+*** NodeJS, very popular platform for developing with JavaScript on the server side.
+*** ExpressJS, framework for Node.js that allows us to work with the HTTP protocol and have a route system.
+*** MongoDB, the most powerful and popular JavaScript-based NoSQL database management system.
+*** Angular6, the framework powered by Google whose purpose is the development of SPA (Single page applications) web applications. Reactive and instant.
+*** jQuery, the must-have and best-known frontend framework for JavaScript.
+*** AJAX, to make asynchronous requests to the server.
+*** Bootstrap, the most standardized and essential CSS and JS framework currently for building user interfaces.
+*** HTML5,  CSS3, etc. 
 
 ## Autor
 
