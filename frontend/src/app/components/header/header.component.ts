@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit, DoCheck {
 		private _route      : ActivatedRoute,
 		private _router     : Router,
 		) {
-		this.title = "MiREDE";
+		this.title = "Opentys";
 		this.url = GLOBAL.url;
 	}
 

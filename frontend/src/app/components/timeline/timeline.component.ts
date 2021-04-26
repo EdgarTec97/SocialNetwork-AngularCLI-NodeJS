@@ -47,6 +47,7 @@ export class TimelineComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		this.refreshPublications();
 		this.getPublications(this.page);
 	}
 

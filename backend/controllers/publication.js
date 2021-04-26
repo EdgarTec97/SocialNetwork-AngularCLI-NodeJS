@@ -13,7 +13,7 @@ var moment = require('moment');
 
 /*** Método de pruebas ***/
 function probando(req, res){
-	res.status(200).send({message: 'Hola desde el controlador de Publicaciones'});
+	res.status(200).send({message: 'Testing pruebas'});
 }
 
 /*** Método para guardar nuevas publicaciones ***/

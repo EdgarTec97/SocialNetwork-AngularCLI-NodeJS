@@ -25,6 +25,7 @@
 	margin-top: 0.8rem;
 	border-radius: 10px;
 	cursor: pointer;
+	object-fit: cover;
 }
 
 .card-img-small{
@@ -34,6 +35,7 @@
 	margin-top: 0.8rem;
 	border-radius: 10px;
 	cursor: pointer;
+	object-fit: cover;
 }
 
 .no-image{
@@ -90,4 +92,7 @@
 	white-space:nowrap; 
 	text-overflow:ellipsis; 
 	width:250px; 
+}
+.avt_img{
+	object-fit: cover;
 }

@@ -17,8 +17,8 @@
 			<div class="card-header">
 				<div class="col-lg-12">
 					<div class="message-avatar">
-						<img src="{{ url + 'get-image-user/' + message.emitter.image }}" *ngIf="message.emitter.image" alt="Card image" />
-						<img src="assets/images/usuario.png" *ngIf="!message.emitter.image" alt="Card image" />
+						<img style="object-fit: cover;" src="{{ url + 'get-image-user/' + message.emitter.image }}" *ngIf="message.emitter.image" alt="Card image" />
+						<img style="object-fit: cover;" src="assets/images/usuario.png" *ngIf="!message.emitter.image" alt="Card image" />
 					</div>
 					<div class="message-user">
 						<a [routerLink]="['/perfil', message.emitter._id]">

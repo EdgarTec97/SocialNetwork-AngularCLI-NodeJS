@@ -12,6 +12,7 @@ export class UserService {
 	public identity
 	public token;
 	public stats;
+	public statsS;
 
 	constructor(public _http: HttpClient) { 
 		this.url = GLOBAL.url;
@@ -90,7 +91,6 @@ export class UserService {
 		}
 		localStorage.setItem('stats', JSON.stringify(my_stats));
 	}
-
 	/** Método que hace la petición para sacar del backend los CONTADORES **/
 	getCounters(user_id = null): Observable<any>{
 		let headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.getToken());

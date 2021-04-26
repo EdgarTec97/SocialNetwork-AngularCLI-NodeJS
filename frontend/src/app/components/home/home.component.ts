@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 	constructor(
 		private _userService: UserService,
 		) {
-		this.title = 'Bienvenid@ a MiREDE';
+		this.title = 'Bienvenid@ a Opentys';
 		this.identity = this._userService.getIdentity();
 	}
 

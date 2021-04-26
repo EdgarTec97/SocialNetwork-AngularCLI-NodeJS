@@ -25,8 +25,8 @@
 						<div class="row">
 							<div class="col-lg-11">
 								<div class="publication-avatar">
-									<img src="{{ url + 'get-image-user/' + publication.user.image }}" *ngIf="publication.user.image" alt="Card image" />
-									<img src="assets/images/usuario.png" *ngIf="!publication.user.image" alt="Card image" />
+									<img class="avt_img" src="{{ url + 'get-image-user/' + publication.user.image }}" *ngIf="publication.user.image" alt="Card image" />
+									<img class="avt_img" src="assets/images/usuario.png" *ngIf="!publication.user.image" alt="Card image" />
 								</div>
 								<div class="publication-user">
 									<a [routerLink]="['/perfil', publication.user._id]">

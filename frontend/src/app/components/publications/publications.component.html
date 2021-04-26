@@ -15,8 +15,8 @@
 				<div class="row">
 					<div class="col-lg-11">
 						<div class="publication-avatar">
-							<img src="{{ url + 'get-image-user/' + publication.user.image }}" *ngIf="publication.user.image" alt="Card image" />
-							<img src="assets/images/usuario.png" *ngIf="!publication.user.image" alt="Card image" />
+							<img style="object-fit: cover;" src="{{ url + 'get-image-user/' + publication.user.image }}" *ngIf="publication.user.image" alt="Card image" />
+							<img style="object-fit: cover;" src="assets/images/usuario.png" *ngIf="!publication.user.image" alt="Card image" />
 						</div>
 						<div class="publication-user">
 							<h3>{{publication.user.name + ' ' +publication.user.surname}}</h3>

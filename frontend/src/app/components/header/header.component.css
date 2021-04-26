@@ -33,8 +33,15 @@
 	height: 35px;
 	border-radius: 100px;
 	overflow: hidden;
+	object-fit: cover;
 }
 
 .avatar-name{
 	margin-top: -0.3rem;
+}
+.dropdown-item{
+	cursor: pointer;
+}
+.dropdown-item:hover{
+	color: white !important;
 }

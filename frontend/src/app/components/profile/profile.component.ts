@@ -58,7 +58,6 @@ export class ProfileComponent implements OnInit, DoCheck {
 			if(params['section']){
 				this.section = params['section'];
 			}
-
 			this.getUser(id);
 			this.getCounters(id);
 		});
@@ -101,10 +100,7 @@ export class ProfileComponent implements OnInit, DoCheck {
 			response => {
 				if(response){
 					this.stats = response;
-					if(this.identity._id == id) localStorage.setItem('stats', JSON.stringify(this.stats));
-					/*if(this.identity._id == id){
-						localStorage.setItem('stats', JSON.stringify(this.stats));
-					}*/
+					localStorage.setItem('stats', JSON.stringify(this.stats));
 					this.status = 'success';
 				}else{
 					this.status = 'error';

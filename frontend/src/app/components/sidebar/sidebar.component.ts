@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, DoCheck } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { Publication } from '../../models/publication';
+import { User } from '../../models/user';
 import { PublicationService } from '../../services/publication.service';
 import { GLOBAL } from '../../services/global';
 import { Router, ActivatedRoute, Params } from '@angular/router';
