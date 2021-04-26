@@ -100,7 +100,7 @@ export class TimelineComponent implements OnInit {
 	deletePublication(publication_id){
 		this._publicationService.deletePublication(this.token, publication_id).subscribe(
 			response => {
-				this._userService.updateMyStats('publications',-1);
+				this._userService.updateMyStatsA('publications',-1);
 				this.refreshPublications();
 			},
 			error => {

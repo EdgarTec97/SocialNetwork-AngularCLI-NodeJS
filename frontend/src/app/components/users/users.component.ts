@@ -109,7 +109,7 @@ export class UsersComponent implements OnInit {
 				}else{
 					this.status = 'success';
 					this.follows.push(followed);
-					this._userService.updateMyStats('following',1);
+					this._userService.updateMyStatsA('following',1);
 				}
 			},
 			error => {
@@ -130,7 +130,7 @@ export class UsersComponent implements OnInit {
 				var search = this.follows.indexOf(followed);
 				if(search != -1){
 					this.follows.splice(search, 1);
-					this._userService.updateMyStats('following',-1);
+					this._userService.updateMyStatsA('following',-1);
 				}
 			},
 			error => {

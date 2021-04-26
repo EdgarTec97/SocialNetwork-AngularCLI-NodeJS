@@ -36,7 +36,7 @@ export class SidebarComponent implements OnInit, DoCheck {
 		this.title = "Tus datos...";
 		this.identity = this._userService.getIdentity();
 		this.token = this._userService.getToken();
-		this.my_stats = this._userService.getStats();
+		this.my_stats = this._userService.getStatsA();
 		this.url = GLOBAL.url;
 		this.publication = new Publication('', '', '', '', this.identity._id);
 	}
@@ -46,7 +46,7 @@ export class SidebarComponent implements OnInit, DoCheck {
 	}
 
 	ngDoCheck(){
-		this.my_stats = this._userService.getStats();
+		this.my_stats = this._userService.getStatsA();
 	}
 
 	onSubmit(form, event){
@@ -57,6 +57,7 @@ export class SidebarComponent implements OnInit, DoCheck {
 					this.status = 'success';
 					this.my_stats.publications += 1;
 					this._userService.updateMyStats('publications',1);
+					this._userService.updateMyStatsA('publications',1);
 
 					if(this.filesToUpload && this.filesToUpload.length){
 						this._uploadService.makeFileRequest(this.url+'upload-image-pub/'+this.publication._id, [], this.filesToUpload, this.token, 'image').then((result: any) => {
@@ -67,7 +68,7 @@ export class SidebarComponent implements OnInit, DoCheck {
 
 					form.reset();
 					this.publicationSended.emit({send:'true'});
-					this._router.navigate(['/timeline']);					
+					window.location.href = "/timeline";				
 				}else{
 					this.status = 'error';
 				}

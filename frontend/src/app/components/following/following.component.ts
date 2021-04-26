@@ -143,6 +143,7 @@ export class FollowingComponent implements OnInit {
 					this.status = 'success';
 					this.follows.push(followed);
 					this._userService.updateMyStats('following',1);
+					this._userService.updateMyStatsA('following',1);
 				}
 			},
 			error => {
@@ -164,6 +165,7 @@ export class FollowingComponent implements OnInit {
 				if(search != -1){
 					this.follows.splice(search, 1);
 					this._userService.updateMyStats('following',-1);
+					this._userService.updateMyStatsA('following',-1);
 				}
 			},
 			error => {

@@ -12,7 +12,7 @@ export class UserService {
 	public identity
 	public token;
 	public stats;
-	public statsS;
+	public statsA;
 
 	constructor(public _http: HttpClient) { 
 		this.url = GLOBAL.url;
@@ -122,5 +122,34 @@ export class UserService {
 		let headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.getToken());
 
 		return this._http.get(this.url+'user/'+id, {headers:headers});
+	}
+	//SIDEBAR
+	/** Método para sacar los CONTADORES almacenados**/
+	getStatsA(){
+		let statsA = JSON.parse(localStorage.getItem('statsA'));
+
+		if(statsA != undefined){
+			this.statsA = statsA;
+		}else{
+			this.statsA = null;
+		}
+
+		return this.statsA;
+	}
+	/** Método para ACTUALIZAR las estadísticas localmente **/
+	updateMyStatsA(statsA, value){
+		let my_statsA = this.getStatsA();
+		switch (statsA) {
+			case "publications":
+			my_statsA.publications = my_statsA.publications+value;
+			break;
+			case "following":
+			my_statsA.following = my_statsA.following+value;
+			break;
+			case "followed":
+			my_statsA.followed = my_statsA.followed+value;
+			break;
+		}
+		localStorage.setItem('statsA', JSON.stringify(my_statsA));
 	}
 }

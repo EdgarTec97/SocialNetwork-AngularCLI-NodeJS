@@ -111,6 +111,21 @@ export class ProfileComponent implements OnInit, DoCheck {
 				console.log(errorMessage);
 			}
 			);
+		this._userService.getCounters(this.identity._id).subscribe(
+			response => {
+				if(response){
+					this.stats = response;
+					localStorage.setItem('statsA', JSON.stringify(this.stats));
+					this.status = 'success';
+				}else{
+					this.status = 'error';
+				}
+			},
+			error => {
+				var errorMessage = <any>error;
+				console.log(errorMessage);
+			}
+			);
 	}
 
 	/** Método para serguir a un usario "followed" **/
@@ -121,6 +136,7 @@ export class ProfileComponent implements OnInit, DoCheck {
 			response => {
 				this.following = true; 
 				this.updateMyStats(1);
+				this.updateMyStatsA(1);
 			},
 			error => {
 				var errorMessage = <any>error;
@@ -139,6 +155,7 @@ export class ProfileComponent implements OnInit, DoCheck {
 			response => {
 				this.following = false; 
 				this.updateMyStats(-1);
+				this.updateMyStatsA(-1);
 			},
 			error => {
 				var errorMessage = <any>error;
@@ -164,8 +181,13 @@ export class ProfileComponent implements OnInit, DoCheck {
 
 	updateMyStats(value){
 		let my_stats = this._userService.getStats();
-		my_stats.following = my_stats.following+value;
+		my_stats.followed = my_stats.followed+value;
 		localStorage.setItem('stats', JSON.stringify(my_stats));
+	}
+	updateMyStatsA(value){
+		let my_stats = this._userService.getStatsA();
+		my_stats.following = my_stats.following+value;
+		localStorage.setItem('statsA', JSON.stringify(my_stats));
 	}
 
 }
